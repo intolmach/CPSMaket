@@ -1,0 +1,215 @@
+@import 'style';
+
+.swiper-header--price {
+  height: 56px;
+}
+
+.swiper-list--price {
+  & > .swiper-list__item--price {
+    width: 260px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+}
+
+.swiper-slide {
+  &__order {
+    position: absolute;
+    width: 119px;
+    height: 32px;
+    background-image: url('../images/zakaz.svg');
+    right: 15px;
+    top: 150px;
+  }
+
+  &__service::before {
+    font-size: 14px;
+    color: $grey;
+    display: block;
+    content: 'Ремонтные услуги';
+  }
+
+  &__price::before {
+    color: $grey;
+    display: block;
+    content: 'Цена';
+  }
+
+  &__time::before {
+    color: $grey;
+    display: block;
+    content: 'Срок';
+  }
+}
+
+.swiper-list__item--price:first-child {
+  display: none;
+}
+
+.price-description {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+
+  &__link {
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '';
+      background-image: url(../images/more.svg);
+      width: 24px;
+      height: 24px;
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-list--price {
+    margin-left: 0;
+    padding-top: 0px;
+    display: grid !important;
+    grid-template-columns: repeat(1, 720px) !important;
+    grid-auto-rows: 60px;
+    justify-content: center;
+    align-content: center;
+    gap: 0;
+
+    & > .swiper-list__item--price {
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 14px;
+      align-items: center;
+      border-radius: 0;
+      border: none;
+    }
+  }
+
+  .swiper-slide__service {
+    flex-basis: 53%;
+  }
+
+  .swiper-list__item--price {
+    &:first-child {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      align-items: baseline;
+      color: $grey;
+    }
+
+    &:nth-child(2) {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    &:nth-child(n + 2):after {
+      content: '';
+      width: 688px;
+      height: 1px;
+      background-color: $platinum;
+      position: absolute;
+      bottom: 0px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    &:hover {
+      transition: all 0.6s ease-in-out;
+      transform: scale(1);
+      background-color: none;
+      cursor: pointer;
+    }
+  }
+
+  .swiper-slide {
+    &__service::before,
+    &__price::before,
+    &__time::before {
+      display: none;
+    }
+
+    &__price,
+    &__time {
+      flex-basis: 15%;
+    }
+
+    &__order {
+      position: static;
+      width: 119px;
+      height: 32px;
+      background-image: url('../images/zakaz.svg');
+      right: 0px;
+      top: 0px;
+
+      &:hover {
+        transition: opacity, transform 0.6s;
+        transform: scale(110%);
+        opacity: 0.5;
+      }
+    }
+
+    &__no-order {
+      position: static;
+      width: 119px;
+      height: 32px;
+      background-image: url('../images/zakaz.svg');
+      right: 0px;
+      top: 0px;
+      visibility: hidden;
+    }
+  }
+
+  .price-description {
+    padding: 24px;
+    width: 63%;
+  }
+}
+
+@media (min-width: 1120px) {
+  .swiper-list--price {
+    grid-template-columns: repeat(1, 1056px) !important;
+
+    &:nth-child(n + 2):after {
+      content: '';
+      width: 1008px;
+      height: 1px;
+      background-color: $platinum;
+      position: absolute;
+      bottom: 0px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .price-description {
+    padding: 32px;
+    width: 47%;
+  }
+}

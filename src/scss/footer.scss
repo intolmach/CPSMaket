@@ -1,0 +1,30 @@
+@import 'style';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: $grey;
+  padding: 16px;
+
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+
+    > p {
+      flex-basis: 100%;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

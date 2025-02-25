@@ -1,0 +1,151 @@
+@import 'style';
+
+.title__h1 {
+  line-height: 40px;
+  font-size: 28px;
+  padding-left: 18px;
+  margin-top: 24px;
+  border-left: 4px solid $lightBlue;
+}
+
+.title > span {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-list__item {
+    justify-content: center;
+    white-space: nowrap;
+    list-style-type: none;
+    padding: 8px;
+    padding-left: 16px;
+    border: 4px solid transparent;
+    font-size: 16px;
+
+    &:first-child {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      border-radius: 5px;
+      border: 4px solid $pung;
+      background-color: $white;
+      cursor: pointer;
+    }
+
+    & > a {
+      text-decoration: none;
+      color: $grey;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+
+  &__foto {
+    object-fit: contain;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    & > * {
+      width: 50%;
+    }
+  }
+}
+
+.main__text {
+  & > p {
+    font-size: 14px;
+    height: 111px;
+    margin-bottom: 16px;
+    white-space: pre-line;
+    overflow: hidden;
+  }
+
+  &--all > p {
+    height: 100% !important;
+    overflow: visible;
+  }
+
+  &--all > .main__button {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    & > p {
+      height: 55%;
+    }
+  }
+}
+
+.main__button {
+  border: none;
+  background-color: transparent;
+
+  &::before {
+    width: 24px;
+    height: 24px;
+    content: '';
+    background: url('../images/expand.svg');
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: 1120px) {
+  .title {
+    display: flex;
+    justify-content: space-between;
+
+    &__button--repair {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      background-image: url('../images/repair.svg');
+    }
+
+    &__button--checkstatus {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      background-image: url('../images/checkstatus.svg');
+    }
+  }
+
+  .title__h1 {
+    flex-grow: 1;
+  }
+
+  .title > span {
+    display: block;
+    width: 200px;
+    font-size: 16px;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+  }
+
+  .main__text > p {
+    height: 75%;
+  }
+
+  .main__button {
+    display: none;
+  }
+}

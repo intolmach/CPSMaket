@@ -1,0 +1,126 @@
+@import 'style';
+
+.header {
+  min-height: 88px;
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  &-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+  }
+
+  @media (min-width: 1120px) {
+    min-height: 18px;
+    visibility: hidden;
+  }
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+
+    &-start {
+      margin-left: 24px;
+      gap: 42px;
+    }
+
+    &-end {
+      margin-right: 24px;
+    }
+  }
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  &:hover {
+    transition: opacity, transform 0.6s;
+    transform: scale(110%);
+    opacity: 0.5;
+  }
+}
+
+.header__logo {
+  width: 97px;
+  height: 51px;
+  object-fit: contain;
+}
+
+.header__button {
+  &--phone,
+  &--chat,
+  &--profile {
+    display: none;
+  }
+
+  &--phone {
+    background-image: url('../images/call.svg');
+  }
+
+  &--chat {
+    background-image: url('../images/chat.svg');
+  }
+
+  &--profile {
+    background-image: url('../images/profile.svg');
+  }
+
+  &--burger {
+    background-image: url('../images/burger.svg');
+  }
+
+  &--repair {
+    background-image: url('../images/repair.svg');
+  }
+  &--checkstatus {
+    background-image: url('../images/checkstatus.svg');
+  }
+  &--repair::before {
+    margin-left: -20px;
+    content: '';
+    width: 2px;
+    height: 32px;
+    background-color: $platinum;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    &--phone,
+    &--chat,
+    &--profile {
+      display: block;
+    }
+
+    &--profile {
+      margin-right: 13px;
+    }
+
+    &--repair {
+      margin-left: 13px;
+    }
+
+    &--burger::after {
+      margin-left: 60px;
+      content: '';
+      width: 2px;
+      height: 32px;
+      background-color: $platinum;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import 'fonts';
+
+$bgColor: #24292e;
+$white: #ffffff;
+$whiteSmoke: #f8f8f8;
+$platinum: #eaeaea;
+$lightBlue: #41f6d7;
+$grey: #7e7e82;
+$grafit: #1b1c21;
+$pink: #ff3e79;
+$pung: #b8ffec;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'TT Lakes';
+  color: $grafit;
+}
+
+.Maket {
+  background-color: $whiteSmoke;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  height: 100vh;
+}

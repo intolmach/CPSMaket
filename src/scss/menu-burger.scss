@@ -1,0 +1,148 @@
+@import 'style';
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 320px;
+  min-height: 100vh;
+  box-shadow: 16px 0px 52px 0px #0e185033, -2px 0px 4px 0px #454f7e05;
+}
+
+.mobile-header {
+  min-height: 80px;
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  &__button--close {
+    background-image: url(../images/close.svg);
+  }
+
+  &__button--search {
+    background-image: url(../images/search.svg);
+  }
+
+  &__logo {
+    position: relative;
+    left: -25px;
+    width: 97px;
+    height: 51px;
+    object-fit: contain;
+  }
+}
+
+.navigator {
+  flex-grow: 0.5;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__item {
+    color: $grafit;
+    height: 32px;
+    padding-left: 20px;
+    display: inline-block;
+    line-height: 32px;
+    font-weight: 500;
+  }
+
+  &__item:hover {
+    padding-left: 16px;
+    border-left: 4px solid $lightBlue;
+    transition: border-left 0.6s;
+    color: $grey;
+  }
+}
+
+.mobile-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.mobile-contact {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  &__button--phone {
+    background-image: url('../images/call.svg');
+  }
+
+  &__button--chat {
+    background-image: url('../images/chat.svg');
+  }
+
+  &__button--profile {
+    background-image: url('../images/profile.svg');
+  }
+}
+
+.mobile-adress {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  gap: 12px;
+
+  &__mail {
+    color: black;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__tel {
+    color: black;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+}
+
+.mobile-lang {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 7px;
+
+  & li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  & li:hover {
+    color: $grey;
+  }
+}
+
+/* -------------MODAL-BURGER-------------*/
+
+.modal-burger {
+  max-width: 320px;
+  min-height: 763px;
+  float: left;
+  border: none;
+  overflow: hidden;
+  position: sticky;
+  padding: 0;
+  margin: 0;
+  box-shadow: 16px 0px 52px 0px #0e185033, -2px 0px 4px 0px #454f7e05;
+}
+
+@media (min-width: 1440px) {
+  .modal-burger {
+    display: block;
+    width: 320px;
+    box-shadow: none;
+  }
+
+  .mobile-header__button--close {
+    display: none;
+  }
+}
